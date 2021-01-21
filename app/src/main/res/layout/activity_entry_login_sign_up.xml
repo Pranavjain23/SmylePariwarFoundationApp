@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EntryLoginSignUpActivity"
+    android:fillViewport="true"
+    android:background="#090520">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlSoSpecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="280dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/smylelogo"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp">
+            <TextView
+                android:id="@+id/continueWith"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Continue with"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp"/>
+
+            <RelativeLayout
+                android:id="@+id/logoLogin"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/continueWith">
+
+                <ImageButton
+                    android:id="@+id/loginWithGoogle"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/loginwithgoogleroundbackground"
+                    android:src="@drawable/googleicon"/>
+
+                <!-- <ImageButton
+                     android:id="@+id/loginWithPhone"
+                     android:layout_width="70dp"
+                     android:layout_height="70dp"
+                     android:layout_marginEnd="-80dp"
+                     android:layout_alignEnd="@id/loginWithGoogle"
+                     android:background="@drawable/loginwithgoogleroundbackground"
+                     android:src="@drawable/ic_phone"
+                     android:layout_marginRight="-80dp"
+                     android:layout_alignRight="@id/loginWithGoogle" />-->
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:textSize="20sp"
+                android:text="Sign up"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/signuproundcorners"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:layout_below="@id/logoLogin"/>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:textSize="20sp"
+                android:text="Log In"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/loginroundcorners"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:layout_below="@id/btnSignUp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

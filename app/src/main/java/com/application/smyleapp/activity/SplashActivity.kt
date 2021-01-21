@@ -1,9 +1,10 @@
-package com.application.smyleapp
+package com.application.smyleapp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.application.smyleapp.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +12,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            val startAct= Intent(this@SplashActivity,
-                MainActivity::class.java)
+            val startAct= Intent(this@SplashActivity, SliderActivity::class.java)
             startActivity(startAct)
         },2000)
     }
