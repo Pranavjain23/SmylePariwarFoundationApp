@@ -48,8 +48,6 @@ class HomeFragment : Fragment() {
 
             val needHelpObject = NeedHelp(
                 "https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"
-
-
             )
             needHelpList.add(needHelpObject)
 
