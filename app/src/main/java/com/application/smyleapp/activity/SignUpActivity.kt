@@ -58,48 +58,47 @@ class SignUpActivity : AppCompatActivity() {
 
         }
 
-//        btnSignUp.setOnClickListener {
-//            val intent = Intent(this@SignUpActivity,
-//                LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+
 
     }
 
-    private fun registerUser(userName:String,email:String,password:String,phoneNumber : String){
+    private fun registerUser(userName:String,email:String,password:String,phoneNumber:String){
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
-                if (it.isSuccessful){
-                    val user: FirebaseUser? = auth.currentUser
-                    val userId:String = user!!.uid
-
-                    databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
-
-                    val hashMap:HashMap<String,String> = HashMap()
-                    hashMap.put("userId",userId)
-                    hashMap.put("userName",userName)
-                    hashMap.put("phoneNumber",phoneNumber)
-                    hashMap.put("userEmail",email)
-
-                    databaseReference.setValue(hashMap).addOnCompleteListener(this){
-                        if (it.isSuccessful){
-                            //open home activity
-                            edtname.setText("")
-                            edtemail.setText("")
-                            edtphonenumber.setText("")
-                            edtpass.setText("")
-                            edtconfirmpass.setText("")
-                            val intent = Intent(this@SignUpActivity,
-                                LoginActivity::class.java)
-                            startActivity(intent)
-                            finish()
-                        }else{
-                            Toast.makeText(applicationContext,"signup failed $it", Toast.LENGTH_SHORT).show()
-
-                        }
-                    }
-                }else{
+                if (it.isSuccessful) {
+//                    val user: FirebaseUser? = auth.currentUser
+//                    val userId:String = user!!.uid
+//
+//                    databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
+//
+//                    val hashMap:HashMap<String,String> = HashMap()
+//                    hashMap.put("userId",userId)
+//                    hashMap.put("userName",userName)
+//                    hashMap.put("phoneNumber",phoneNumber)
+//                    hashMap.put("userEmail",email)
+//
+//                    databaseReference.setValue(hashMap).addOnCompleteListener(this){
+//                        if (it.isSuccessful){
+//                            //open home activity
+//                            edtname.setText("")
+//                            edtemail.setText("")
+//                            edtphonenumber.setText("")
+//                            edtpass.setText("")
+//                            edtconfirmpass.setText("")
+                    val intent = Intent(
+                        this@SignUpActivity,
+                        LoginActivity::class.java
+                    )
+                    startActivity(intent)
+                    finish()
+//                        }else{
+//                            Toast.makeText(applicationContext,"signup failed ${it.result}", Toast.LENGTH_SHORT).show()
+//
+//                        }
+//                    }
+//                }
+                }
+                else{
                     Toast.makeText(applicationContext,"signup failed $it", Toast.LENGTH_SHORT).show()
 
                 }
