@@ -62,22 +62,7 @@
             android:layout_marginStart="5dp"
             android:layout_below="@id/txtCreateAccount1"/>
 
-        <EditText
-            android:id="@+id/edtusername"
-            android:layout_width="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_height="55dp"
-            android:drawableStart="@drawable/ic_person"
-            android:background="@drawable/et_bg"
-            android:hint="Username"
-            android:layout_below="@id/edtname"
-            android:inputType="text"
-            android:paddingStart="15dp"
-            android:drawablePadding="10dp"
-            android:paddingLeft="15dp"
-            android:singleLine="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"/>
+
 
 
 
@@ -88,13 +73,30 @@
             android:paddingLeft="15dp"
             android:background="@drawable/et_bg"
             android:singleLine="true"
-            android:layout_below="@id/edtusername"
+            android:layout_below="@id/edtname"
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/ic_email"
             android:textColor="@color/colorWhite"
             android:inputType="textEmailAddress"
             android:layout_height="55dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"/>
+
+        <EditText
+            android:id="@+id/edtphonenumber"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="55dp"
+            android:drawableStart="@drawable/ic_person"
+            android:background="@drawable/et_bg"
+            android:hint="Phone Number"
+            android:layout_below="@id/edtemail"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:drawablePadding="10dp"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"/>
 
@@ -112,7 +114,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:layout_below="@id/edtemail"/>
+            android:layout_below="@id/edtphonenumber"/>
 
         <EditText
             android:id="@+id/edtconfirmpass"

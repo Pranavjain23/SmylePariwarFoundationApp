@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "572900989005",
+    "project_id": "smylefoundationapp",
+    "storage_bucket": "smylefoundationapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572900989005:android:87964944e78abb7587e404",
+        "android_client_info": {
+          "package_name": "com.application.smyleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572900989005-uqjalglbdchtcjtfc4gmajlqtkjstila.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.smyleapp",
+            "certificate_hash": "7b6e3a1f0b41dc6a2cf2cb8ddb761f7ddd0cd705"
+          }
+        },
+        {
+          "client_id": "572900989005-cqjbnkrrobdfhusfpunmlq36s2rs1r5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAhI0eg0VsVmL8n3NN2nZJDry2h_MQBxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572900989005-cqjbnkrrobdfhusfpunmlq36s2rs1r5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
