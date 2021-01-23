@@ -37,15 +37,23 @@
                     android:textStyle="bold"
                     android:textColor="#000"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:background="#fff"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/recyclerNeedHelp"
-                    android:layout_marginTop="50dp"
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:background="#fff"-->
 
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:id="@+id/recyclerNeedHelp"-->
+<!--                    android:layout_marginTop="50dp"-->
+
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"/>-->
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/needHelpViewPager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"/>
+                    android:paddingStart="80dp"
+                    android:paddingEnd="80dp"/>
             </RelativeLayout>
 
         </RelativeLayout>
