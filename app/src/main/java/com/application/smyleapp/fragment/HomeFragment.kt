@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
     private val sliderHandler = Handler()
 
     val needHelpList = arrayListOf<NeedHelp>()
-    val sliderList = arrayListOf<SliderItem>()
+
 
 
 

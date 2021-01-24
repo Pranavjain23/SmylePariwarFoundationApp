@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.application.smyleapp.R
@@ -16,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 class SignUpActivity : AppCompatActivity() {
 
     lateinit var auth : FirebaseAuth
+
     lateinit var btnSignUp : Button
     lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,38 +68,52 @@ class SignUpActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
                 if (it.isSuccessful) {
-//                    val user: FirebaseUser? = auth.currentUser
-//                    val userId:String = user!!.uid
-//
-//                    databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
-//
-//                    val hashMap:HashMap<String,String> = HashMap()
-//                    hashMap.put("userId",userId)
-//                    hashMap.put("userName",userName)
-//                    hashMap.put("phoneNumber",phoneNumber)
-//                    hashMap.put("userEmail",email)
-//
-//                    databaseReference.setValue(hashMap).addOnCompleteListener(this){
-//                        if (it.isSuccessful){
-//                            //open home activity
-//                            edtname.setText("")
-//                            edtemail.setText("")
-//                            edtphonenumber.setText("")
-//                            edtpass.setText("")
-//                            edtconfirmpass.setText("")
+
+
+
+                    val user: FirebaseUser? = auth.currentUser
+
+
+
+                    val userId:String = user!!.uid
+                    databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
+
+
+
+
+                    val hashMap:HashMap<String,String> = HashMap()
+                    hashMap.put("userId",userId)
+                    hashMap.put("userName",userName)
+                    hashMap.put("phoneNumber",phoneNumber)
+                    hashMap.put("userEmail",email)
+
+                    databaseReference.setValue(hashMap).addOnCompleteListener(this){
+
+
+                        if (it.isSuccessful){
+
+
+                            //open home activity
+                            edtname.setText("")
+                            edtemail.setText("")
+                            edtphonenumber.setText("")
+                            edtpass.setText("")
+                            edtconfirmpass.setText("")
+
                     val intent = Intent(
                         this@SignUpActivity,
-                        LoginActivity::class.java
+                        MainActivity::class.java
                     )
                     startActivity(intent)
                     finish()
-//                        }else{
-//                            Toast.makeText(applicationContext,"signup failed ${it.result}", Toast.LENGTH_SHORT).show()
-//
-//                        }
-//                    }
-//                }
+                        }else{
+                            Toast.makeText(applicationContext,"saving to database failed ${it.result}", Toast.LENGTH_SHORT).show()
+                            Log.d("ERROR","${it}")
+
+                        }
+                    }
                 }
+
                 else{
                     Toast.makeText(applicationContext,"signup failed $it", Toast.LENGTH_SHORT).show()
 

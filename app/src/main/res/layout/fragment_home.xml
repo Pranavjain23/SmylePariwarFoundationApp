@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="280dp">
                 <TextView
+                    android:id="@+id/txtHelp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="We need your Help"
@@ -45,9 +46,10 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/needHelpViewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingStart="80dp"
-                    android:paddingEnd="80dp"/>
+                    android:layout_below="@id/txtHelp"
+                    android:layout_height="230dp"
+                    android:paddingStart="60dp"
+                    android:paddingEnd="60dp"/>
             </RelativeLayout>
 
         </RelativeLayout>

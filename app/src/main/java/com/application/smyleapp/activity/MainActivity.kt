@@ -20,13 +20,16 @@ class MainActivity : AppCompatActivity() {
         val SponsorFragment = SponsorFragment()
         val MoreFragment = MoreFragment()
 
-        makeCurrentFragment(homeFragment)
+
 
         bottom_navigation.add(MeowBottomNavigation.Model(1,R.drawable.ic_home))
         bottom_navigation.add(MeowBottomNavigation.Model(2,R.drawable.ic_about))
         bottom_navigation.add(MeowBottomNavigation.Model(3,R.drawable.ic_sponsor))
         bottom_navigation.add(MeowBottomNavigation.Model(4,R.drawable.ic_gallery))
         bottom_navigation.add(MeowBottomNavigation.Model(5,R.drawable.ic_more))
+        makeCurrentFragment(homeFragment)
+
+        bottom_navigation.show(1)
 
         bottom_navigation.setOnClickMenuListener{
             when(it.id){

@@ -36,6 +36,8 @@
         android:layout_height="wrap_content"
         app:labelVisibilityMode="labeled"
         android:focusable="true"
+        app:mbn_countBackgroundColor="@color/colorAccent"
+
         app:mbn_backgroundBottomColor="#fff"
         android:background="@color/colorAccent"
         android:soundEffectsEnabled="true"
