@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         auth = FirebaseAuth.getInstance()
-        firebaseUser = auth!!.currentUser!! //if he never logged out
+//        firebaseUser = auth!!.currentUser!! //if he never logged out
 
         //check if user login then navigate to user screen
 //        if (firebaseUser != null) {
@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                             password_et.setText("")
                             val intent = Intent(
                                 this@LoginActivity,
-                                MainActivity::class.java
+                                SendNotif::class.java
                             )
                             startActivity(intent)
                             finish()
