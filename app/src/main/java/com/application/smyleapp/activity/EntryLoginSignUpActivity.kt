@@ -17,42 +17,6 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-//class EntryLoginSignUpActivity : AppCompatActivity() {
-
-//    lateinit var btnLogin : Button
-//    lateinit var btnSignUp : Button
-//    lateinit var loginWithGoogle : ImageButton
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_entry_login_sign_up)
-//
-//        btnLogin= findViewById(R.id.btnLogin)
-//        btnSignUp= findViewById(R.id.btnSignUp)
-//        loginWithGoogle= findViewById(R.id.loginWithGoogle)
-//
-//        btnLogin.setOnClickListener {
-//            val intent = Intent(this@EntryLoginSignUpActivity, LoginActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        btnSignUp.setOnClickListener {
-//            val intent = Intent(this@EntryLoginSignUpActivity, SignUpActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        loginWithGoogle.setOnClickListener {
-//        }
-//    }
-
-
-
-
-
-//}
-
-
-
 class EntryLoginSignUpActivity : AppCompatActivity() {
     lateinit var btnLogin : Button
     lateinit var btnSignUp: Button
