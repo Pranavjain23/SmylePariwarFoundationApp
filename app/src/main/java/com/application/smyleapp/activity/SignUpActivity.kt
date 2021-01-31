@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.application.smyleapp.R
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -26,6 +27,8 @@ class SignUpActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         btnSignUp = findViewById(R.id.btnSignUp)
+
+
 
         btnSignUp.setOnClickListener {
             val userName = edtname.text.toString()

@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                             password_et.setText("")
                             val intent = Intent(
                                 this@LoginActivity,
-                                SendNotif::class.java
+                                MainActivity::class.java
                             )
                             startActivity(intent)
                             finish()
