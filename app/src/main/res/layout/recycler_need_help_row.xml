@@ -22,8 +22,18 @@
             android:src="@drawable/smylelogo"/>
 
         <LinearLayout
+            android:layout_below="@+id/imgNeedHelp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp">
+            <TextView
+                android:id="@+id/txtNeedHelp"
+                android:text="Help Please"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="17dp"/>
+        </LinearLayout>
         <Button
             android:id="@+id/btnDonate"
             android:layout_width="150dp"

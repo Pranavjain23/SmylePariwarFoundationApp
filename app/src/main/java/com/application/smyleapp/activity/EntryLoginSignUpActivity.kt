@@ -57,6 +57,7 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
     lateinit var btnLogin : Button
     lateinit var btnSignUp: Button
     lateinit var loginWithGoogle: ImageButton
+    private var auth: FirebaseAuth? = null
     // lateinit var loginWithPhone: ImageButton
 
     companion object {
@@ -73,6 +74,9 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
         btnLogin= findViewById(R.id.btnLogin)
         btnSignUp= findViewById(R.id.btnSignUp)
         loginWithGoogle= findViewById(R.id.loginWithGoogle)
+
+
+
         //  loginWithPhone= findViewById(R.id.loginWithPhone)
 
         // Configure Google Sign In
@@ -84,12 +88,22 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         //Firebase Auth instance
-        mAuth = FirebaseAuth.getInstance()
+//        mAuth = FirebaseAuth.getInstance()
+//
+//        if (mAuth!!.currentUser!! != null) {
+//            val intent = Intent(
+//                this@EntryLoginSignUpActivity,
+//                MainActivity::class.java
+//            )
+//            startActivity(intent)
+//            finish()
+//        }
 
 
         btnLogin.setOnClickListener {
             val intent = Intent(this@EntryLoginSignUpActivity, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         loginWithGoogle.setOnClickListener{
@@ -107,6 +121,7 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
             //val intent = Intent(this@EntryLoginSignupActivity, StartSignUpActivity::class.java)
             //intent.putExtra("flag","email");
             startActivity(intent)
+            finish()
         }
     }
 
@@ -165,4 +180,6 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
                 }
             }
     }
+
+
 }

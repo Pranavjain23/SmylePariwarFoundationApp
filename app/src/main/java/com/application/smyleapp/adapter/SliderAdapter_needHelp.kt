@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -18,7 +19,7 @@ class SliderAdapter_needHelp internal constructor(
     needHelpList : MutableList<NeedHelp>,
     viewPager2: ViewPager2
 
-) : RecyclerView.Adapter<NeedHelpAdapter.NeedHelpViewHolder>(){
+) : RecyclerView.Adapter<SliderAdapter_needHelp.sliderViewHolder>(){
 
     private val needHelpList : List<NeedHelp>
     private val viewPager2 : ViewPager2
@@ -30,8 +31,9 @@ class SliderAdapter_needHelp internal constructor(
 
 
     class sliderViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        private val cardNeedHelp : CardView = view.findViewById(R.id.cardNeedHelp)
-        private val imgNeedHelp : ImageView = view.findViewById(R.id.imgNeedHelp)
+         val cardNeedHelp : CardView = view.findViewById(R.id.cardNeedHelp)
+         val imgNeedHelp : ImageView = view.findViewById(R.id.imgNeedHelp)
+        val txtNeedHelp : TextView = view.findViewById(R.id.txtNeedHelp)
 
         fun image(needHelp: NeedHelp){
             Picasso.get().load(needHelp.imgNeedHelp).error(R.drawable.smylelogo).into(imgNeedHelp)
@@ -43,8 +45,8 @@ class SliderAdapter_needHelp internal constructor(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): NeedHelpAdapter.NeedHelpViewHolder {
-        return NeedHelpAdapter.NeedHelpViewHolder(
+    ): SliderAdapter_needHelp.sliderViewHolder {
+        return SliderAdapter_needHelp.sliderViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.recycler_need_help_row,parent,false)
 
         )
@@ -61,9 +63,12 @@ class SliderAdapter_needHelp internal constructor(
 
 
 
-    override fun onBindViewHolder(holder: NeedHelpAdapter.NeedHelpViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SliderAdapter_needHelp.sliderViewHolder, position: Int) {
         val needHelp = needHelpList[position]
+
         Picasso.get().load(needHelp.imgNeedHelp).error(R.drawable.smylelogo).into(holder.imgNeedHelp)
+        holder.txtNeedHelp.text = needHelp.title
+
         if(position == needHelpList.size - 2){
             viewPager2.post(runnable)
 

@@ -45,12 +45,14 @@
 <!--                    android:orientation="horizontal"/>-->
 
                 <androidx.viewpager2.widget.ViewPager2
+                    android:layout_marginTop="20dp"
                     android:id="@+id/needHelpViewPager"
                     android:layout_width="match_parent"
                     android:layout_below="@id/txtHelp"
                     android:layout_height="230dp"
                     android:paddingStart="60dp"
-                    android:paddingEnd="60dp"/>
+                    android:paddingEnd="60dp"
+                    />
             </RelativeLayout>
 
         </RelativeLayout>

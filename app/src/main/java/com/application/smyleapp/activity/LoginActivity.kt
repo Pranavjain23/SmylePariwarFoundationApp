@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var btnContinue : Button
     lateinit var signUp : TextView
     private var auth: FirebaseAuth? = null
-    private  var firebaseUser: FirebaseUser? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -28,12 +28,12 @@ class LoginActivity : AppCompatActivity() {
 //            startActivity(intent)
 //        }
 
-
-
-        auth = FirebaseAuth.getInstance()
-//        firebaseUser = auth!!.currentUser!! //if he never logged out
+        //        firebaseUser = auth!!.currentUser!! //if he never logged out
 
         //check if user login then navigate to user screen
+        auth = FirebaseAuth.getInstance()
+//        val firebaseUser = auth?.currentUser
+//
 //        if (firebaseUser != null) {
 //            val intent = Intent(
 //                this@LoginActivity,
@@ -42,6 +42,16 @@ class LoginActivity : AppCompatActivity() {
 //            startActivity(intent)
 //            finish()
 //        }
+
+
+
+
+
+
+
+
+
+
 
         btnContinue.setOnClickListener {
             val email = mail_et.text.toString()
@@ -57,6 +67,7 @@ class LoginActivity : AppCompatActivity() {
                 auth!!.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) {
                         if (it.isSuccessful) {
+
                             mail_et.setText("")
                             password_et.setText("")
                             val intent = Intent(
@@ -85,4 +96,6 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
+
+
 }

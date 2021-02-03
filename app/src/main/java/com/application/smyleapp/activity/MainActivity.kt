@@ -8,13 +8,13 @@ import com.application.smyleapp.fragment.*
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+val homeFragment = HomeFragment()
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val homeFragment = HomeFragment()
+
         val AboutFragment = AboutFragment()
         val GalleryFragment = GalleryFragment()
         val SponsorFragment = SponsorFragment()
@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
     }
     private fun makeCurrentFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().apply {
@@ -54,6 +56,23 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
     }
+    override fun onBackPressed() {
+        val frag = supportFragmentManager.findFragmentById(R.id.frameLayout)
+        when(frag) {
+            !is HomeFragment ->    {
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.frameLayout, homeFragment)
+                    commit()
+                }
+                bottom_navigation.show(1)
+
+            }
+
+            else -> super.onBackPressed()
+        }
+    }
+
+
     }
 
 

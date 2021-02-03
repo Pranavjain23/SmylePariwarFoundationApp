@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.application.smyleapp.R
 import com.application.smyleapp.adapter.SliderAdapter_welcome
+import com.google.firebase.auth.FirebaseAuth
 
 class SliderActivity : AppCompatActivity() {
     lateinit var mSlideViewPager: ViewPager
@@ -23,10 +24,14 @@ class SliderActivity : AppCompatActivity() {
     private var mCurrentPage = 0
 
     private lateinit var mDots: Array<TextView?>
+    lateinit var mAuth : FirebaseAuth
+    private var auth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slider)
+
+
 
         mSlideViewPager = findViewById(R.id.slideViewPager)
         mDotLayout = findViewById(R.id.dotsLayout)
@@ -94,6 +99,7 @@ class SliderActivity : AppCompatActivity() {
                 mNextBtn.setOnClickListener {
                     val intent = Intent(this@SliderActivity, EntryLoginSignUpActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
 
             } else {
@@ -106,5 +112,22 @@ class SliderActivity : AppCompatActivity() {
         }
 
         override fun onPageScrollStateChanged(state: Int) {}
+
     }
+    public override fun onStart() {
+        super.onStart()
+        auth = FirebaseAuth.getInstance()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth!!.currentUser
+        if (currentUser != null){
+                        val intent = Intent(
+                this@SliderActivity,
+                MainActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
+
+    }
+
 }

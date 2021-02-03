@@ -1,6 +1,6 @@
 package com.application.smyleapp.fragment
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -14,11 +14,10 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.application.smyleapp.R
 import com.application.smyleapp.adapter.NeedHelpAdapter
-import com.application.smyleapp.adapter.SliderAdapter
 import com.application.smyleapp.adapter.SliderAdapter_needHelp
 import com.application.smyleapp.model.NeedHelp
-import com.application.smyleapp.model.SliderItem
 import java.lang.Math.abs
+
 
 class HomeFragment : Fragment() {
 
@@ -42,9 +41,9 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         viewPager2 = view.findViewById(R.id.needHelpViewPager)
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"))
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"))
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"))
+        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Book pilgrimage trips"))
+        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Educate 100 girls"))
+        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Support old and poor"))
 
         viewPager2.adapter = SliderAdapter_needHelp(needHelpList, viewPager2)
 
@@ -84,6 +83,8 @@ class HomeFragment : Fragment() {
         super.onResume()
         sliderHandler.postDelayed(sliderRunnable,3000)
     }
+
+
 
 
 

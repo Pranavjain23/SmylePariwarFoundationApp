@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:padding="20dp"
+       android:layout_alignParentBottom="true">
+       <TextView
+           android:padding="10dp"
+           android:id="@+id/txtAccount"
+           android:textSize="25sp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Account"/>
+
+       <TextView
+           android:id="@+id/txtHelp"
+           android:padding="10dp"
+           android:textSize="25sp"
+           android:layout_below="@+id/txtAccount"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Help"/>
+
+       <TextView
+           android:id="@+id/txtSignOut"
+           android:padding="10dp"
+           android:textSize="25sp"
+           android:layout_below="@+id/txtHelp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Sign Out"/>
+
+
+   </RelativeLayout>
+
+</RelativeLayout>
