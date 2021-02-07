@@ -3,6 +3,8 @@
     package="com.application.smyleapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PostGoogleSignUp"></activity>
+        <activity android:name=".activity.AdminActivity">
+
+        </activity>
+        <activity android:name=".activity.SendMessageActivity">
+
+        </activity>
+        <activity android:name=".activity.PostGoogleSignUp" />
         <activity android:name=".activity.SendNotif" />
         <activity android:name=".activity.SliderActivity" />
         <activity android:name=".activity.SignUpActivity" />
