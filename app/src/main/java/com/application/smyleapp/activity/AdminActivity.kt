@@ -32,7 +32,7 @@ class AdminActivity : AppCompatActivity() {
         adminKey = findViewById(R.id.adminKey)
         adminEnter = findViewById(R.id.adminEnter)
         auth = FirebaseAuth.getInstance()
-        firebaseUser = FirebaseAuth.getInstance().currentUser!!
+//        firebaseUser = FirebaseAuth.getInstance().currentUser!!
         databaseReference = FirebaseDatabase.getInstance().getReference("Admins")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {

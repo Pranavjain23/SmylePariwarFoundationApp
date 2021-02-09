@@ -1,32 +1,35 @@
 package com.application.smyleapp.activity
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Telephony
-import android.telephony.SmsManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.application.smyleapp.R
-import java.util.jar.Manifest
+import com.application.smyleapp.model.Contributor
+import com.application.smyleapp.model.User
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_send_message.*
 
 class SendMessageActivity : AppCompatActivity() {
     lateinit var etMessageNumber : EditText
     lateinit var etMessageData : EditText
     lateinit var btnSend : Button
+    lateinit var etMessageCode : EditText
+    lateinit var auth: FirebaseAuth
+    lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_message)
         etMessageData = findViewById(R.id.etMessageData)
+        etMessageCode = findViewById(R.id.etMessageCode)
         etMessageNumber = findViewById(R.id.etMessageNumber)
         btnSend = findViewById(R.id.btnSend)
+        auth = FirebaseAuth.getInstance()
+
 
 
 
@@ -36,11 +39,35 @@ class SendMessageActivity : AppCompatActivity() {
         }else{
 //            receiveMsg()
         }
+//        btnSend.setOnClickListener {
+//            var sms = SmsManager.getDefault()
+//            val message : String = "Jai shree Shyam Mr. Dash,SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
+//
+//            sms.sendTextMessage(etMessageNumber.text.toString(),"ME",message,null,null)
+//        }
         btnSend.setOnClickListener {
-            var sms = SmsManager.getDefault()
-            val message : String = "Jai shree Shyam Mr. Dash,SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
-            
-            sms.sendTextMessage(etMessageNumber.text.toString(),"ME",message,null,null)
+            Toast.makeText(this@SendMessageActivity,etMessageCode.text.toString(), Toast.LENGTH_SHORT).show()
+
+            databaseReference = FirebaseDatabase.getInstance().getReference("Contributors").child(etMessageCode.text.toString())
+
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@SendMessageActivity, error.message, Toast.LENGTH_SHORT).show()
+                }
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val contributor = dataSnapshot.getValue(Contributor::class.java)
+                    if (contributor != null) {
+                        txtMessageNumber.text = contributor.CONTACTNO.toString()
+                    }else{
+                        Toast.makeText(this@SendMessageActivity, "its null", Toast.LENGTH_SHORT).show()
+
+                    }
+
+
+
+                }
+            })
+
         }
 
     }

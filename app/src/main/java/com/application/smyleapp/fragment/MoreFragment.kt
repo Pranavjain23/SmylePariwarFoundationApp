@@ -37,23 +37,31 @@ class MoreFragment : Fragment() {
         txtName = view.findViewById(R.id.txtName)
 
         auth = FirebaseAuth.getInstance()
-        firebaseUser = FirebaseAuth.getInstance().currentUser!!
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onDataChange(snapshot: DataSnapshot) {
+        val firebaseUser = auth.currentUser
 
-                val currentUser = snapshot.getValue(User::class.java)
-                if (currentUser != null) {
-                    txtName.setText(currentUser.userName)
+        if (firebaseUser!=null){
+            databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
+
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
                 }
 
+                override fun onDataChange(snapshot: DataSnapshot) {
 
-            }
-        })
+                    val currentUser = snapshot.getValue(User::class.java)
+                    if (currentUser != null) {
+                        txtName.setText(currentUser.userName)
+
+                    }
+
+
+                }
+            })
+        }
+
+
 
         txtSignOut.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
