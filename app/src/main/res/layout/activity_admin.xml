@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".activity.AdminActivity">
+
+    <EditText
+
+        android:id="@+id/adminName"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/et_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        />
+
+
+    <EditText
+        android:id="@+id/adminNumber"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/et_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Phone Number"
+
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_below="@+id/adminName"
+        />
+
+    <EditText
+        android:id="@+id/adminKey"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/et_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Access Key"
+
+        android:layout_below="@+id/adminNumber"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        />
+
+    <Button
+        android:id="@+id/adminEnter"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="20sp"
+        android:text="Sign up"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/signuproundcorners"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_below="@+id/adminKey"/>
+
+</RelativeLayout>
