@@ -20,6 +20,7 @@ class SliderActivity : AppCompatActivity() {
 
     lateinit var mNextBtn: Button
     lateinit var mBackBtn: Button
+    lateinit var btnJoinUs : Button
 
     private var mCurrentPage = 0
 
@@ -38,6 +39,13 @@ class SliderActivity : AppCompatActivity() {
 
         mNextBtn = findViewById(R.id.nextBtn)
         mBackBtn = findViewById(R.id.prevBtn)
+        btnJoinUs = findViewById(R.id.btnJoinUs)
+
+        btnJoinUs.setOnClickListener {
+            val intent = Intent(this@SliderActivity, EntryLoginSignUpActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val sliderAdapter = SliderAdapter_welcome(this)
 
@@ -64,7 +72,7 @@ class SliderActivity : AppCompatActivity() {
             mDots[i] = TextView(this)
             mDots[i]!!.text = Html.fromHtml("&#8226;")
             mDots[i]!!.textSize = 35f
-            mDots[i]!!.setTextColor(resources.getColor(R.color.colorWhite))
+            mDots[i]!!.setTextColor(resources.getColor(R.color.colorPrimary))
             mDotLayout.addView(mDots[i])
         }
         if (mDots.isNotEmpty()) {
@@ -92,7 +100,7 @@ class SliderActivity : AppCompatActivity() {
             } else if (position == mDots.size - 1) {
                 mNextBtn.isEnabled = true
                 mBackBtn.isEnabled = true
-                mBackBtn.visibility = View.VISIBLE
+                //mBackBtn.visibility = View.VISIBLE
                 mNextBtn.text = "Finish"
                 mBackBtn.text = "Back"
 
@@ -105,7 +113,7 @@ class SliderActivity : AppCompatActivity() {
             } else {
                 mNextBtn.isEnabled = true
                 mBackBtn.isEnabled = true
-                mBackBtn.visibility = View.VISIBLE
+                //mBackBtn.visibility = View.VISIBLE
                 mNextBtn.text = "Next"
                 mBackBtn.text = "Back"
             }
