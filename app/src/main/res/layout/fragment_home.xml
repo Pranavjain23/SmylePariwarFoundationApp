@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
 
 
@@ -69,7 +70,7 @@
                     android:textSize="25sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:textColor="#000"/>
+                    android:textColor="@color/colorPrimaryDark"/>
 
 <!--                <androidx.recyclerview.widget.RecyclerView-->
 <!--                    android:background="#fff"-->
@@ -116,8 +117,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Goals of NGO"
-                android:textSize="20sp"
-                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingStart="10dp"
                 android:textStyle="bold"/>
 
