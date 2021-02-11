@@ -22,21 +22,21 @@ class SliderAdapter_welcome(val context: Context) : PagerAdapter() {
 
     val slide_images = arrayOf(
 
-        R.drawable.smylelogo,
-        R.drawable.smylelogo,
-        R.drawable.smylelogo
+        R.drawable.donate,
+        R.drawable.helpchild,
+        R.drawable.bevolunteer
     )
 
     val slide_headings = arrayOf(
-        "",
-        "",
-        ""
+        "GET INVOLVED",
+        "HELP THE CHILD",
+        "BECOME A VOLUNTEER"
     )
 
     val slide_descs = arrayOf(
-        "",
-        "",
-        ""
+        "Donate for a cause as only you can do it and help those in urgent need",
+        "Help poor children fight their way out of poverty by donating for their education",
+        "Help us fighting our goals and make the world better place to live in for each and everyone"
     )
 
 
