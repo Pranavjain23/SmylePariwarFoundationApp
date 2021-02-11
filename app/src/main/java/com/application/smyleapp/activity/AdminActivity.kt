@@ -8,10 +8,12 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.smyleapp.R
+import com.application.smyleapp.model.Contributor
 import com.application.smyleapp.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_send_message.*
 
 
 class AdminActivity : AppCompatActivity() {
@@ -21,6 +23,7 @@ class AdminActivity : AppCompatActivity() {
     lateinit var adminEnter : Button
     lateinit var auth: FirebaseAuth
     lateinit var firebaseUser: FirebaseUser
+    lateinit var phone_number : String
 
     lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,31 +35,56 @@ class AdminActivity : AppCompatActivity() {
         adminKey = findViewById(R.id.adminKey)
         adminEnter = findViewById(R.id.adminEnter)
         auth = FirebaseAuth.getInstance()
-//        firebaseUser = FirebaseAuth.getInstance().currentUser!!
+        phone_number = "000"
+
+        val firebaseUser = auth.currentUser
+
+        if (firebaseUser!=null){
+            databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
+
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@AdminActivity, error.message, Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    val currentUser = snapshot.getValue(User::class.java)
+                    if (currentUser != null) {
+                        Log.e("hello",currentUser.phoneNumber+"is hello")
+                        phone_number = currentUser.phoneNumber
+
+
+                    }
+
+
+                }
+            })
+        }
+
+
+
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Admins")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@AdminActivity, error.message, Toast.LENGTH_SHORT).show()
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val currentUser = dataSnapshot.getValue(User::class.java)
-                for (data in dataSnapshot.children) {
-                    if (currentUser != null) {
-                        if (data.child(currentUser.phoneNumber
-                            ).exists()) {
+                if (dataSnapshot.child(phone_number).exists()) {
+                    val intent = Intent(
+                        this@AdminActivity,
+                        SendMessageActivity::class.java
+                    )
+                    startActivity(intent)
+                    finish()
+                }else{
 
-                            val intent = Intent(
-                                this@AdminActivity,
-                                SendMessageActivity::class.java
-                            )
-                            startActivity(intent)
-                            finish()
-
-                        } else {
-
-                        }
-                    }
                 }
+
+
+
             }
         })
 

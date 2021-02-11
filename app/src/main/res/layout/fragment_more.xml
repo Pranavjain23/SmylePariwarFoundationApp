@@ -3,9 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btnAdminAccess"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:text="Admin Access"
+        android:textSize="10sp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape1"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"/>
+
+
+
     <TextView
         android:textColor="#000"
-        android:padding="10dp"
+        android:padding="5dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/txtName"
         android:textSize="25sp"
         android:layout_width="match_parent"
@@ -13,11 +27,13 @@
         android:textAlignment="center"
         android:text=""/>
 
+
+
     <RelativeLayout
         android:id="@+id/rlShare"
         android:layout_below="@+id/txtName"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
+
         android:padding="15dp"
         android:layout_height="190dp">
         <TextView

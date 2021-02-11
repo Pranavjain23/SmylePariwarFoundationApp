@@ -26,7 +26,7 @@ class SendMessageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_send_message)
         etMessageData = findViewById(R.id.etMessageData)
         etMessageCode = findViewById(R.id.etMessageCode)
-        etMessageNumber = findViewById(R.id.etMessageNumber)
+
         btnSend = findViewById(R.id.btnSend)
         auth = FirebaseAuth.getInstance()
 

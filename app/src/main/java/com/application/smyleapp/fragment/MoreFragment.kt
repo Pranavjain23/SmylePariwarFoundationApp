@@ -1,14 +1,17 @@
 package com.application.smyleapp.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.application.smyleapp.R
+import com.application.smyleapp.activity.AdminActivity
 import com.application.smyleapp.activity.LoginActivity
 import com.application.smyleapp.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +22,7 @@ import com.squareup.picasso.Picasso
 class MoreFragment : Fragment() {
 
     lateinit var txtSignOut: TextView
+    lateinit var btnAdminAccess : Button
     lateinit var txtShare : TextView
     lateinit var txtName : TextView
     lateinit var auth: FirebaseAuth
@@ -35,6 +39,7 @@ class MoreFragment : Fragment() {
         txtSignOut = view.findViewById(R.id.txtSignOut)
         txtShare = view.findViewById(R.id.txtShare)
         txtName = view.findViewById(R.id.txtName)
+        btnAdminAccess = view.findViewById(R.id.btnAdminAccess)
 
         auth = FirebaseAuth.getInstance()
 
@@ -71,6 +76,11 @@ class MoreFragment : Fragment() {
             val intent = Intent(context,LoginActivity::class.java)
             startActivity(intent)
 
+        }
+
+        btnAdminAccess.setOnClickListener {
+            val intent = Intent(activity as Context, AdminActivity::class.java)
+            startActivity(intent)
         }
 
         txtShare.setOnClickListener {

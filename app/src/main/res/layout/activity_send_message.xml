@@ -1,43 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    tools:context=".activity.SendMessageActivity">-->
+
+
+
+<!--    <EditText-->
+<!--        android:layout_below="@+id/txtMessageNumber"-->
+<!--        android:id="@+id/etMessageCode"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/etMessageNumber"-->
+<!--        android:layout_below="@+id/etMessageCode"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"/>-->
+
+<!--    <EditText-->
+<!--        android:layout_marginTop="40dp"-->
+
+<!--        android:layout_below="@+id/etMessageNumber"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:id="@+id/etMessageData"/>-->
+
+<!--    <Button-->
+<!--        android:layout_below="@+id/etMessageData"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:text="SEND"-->
+<!--        android:id="@+id/btnSend"/>-->
+
+<!--</RelativeLayout>-->
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activity.SignUpActivity"
+android:fillViewport="true"
+android:background="#090520">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SendMessageActivity">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <ImageView
+        android:id="@+id/signup_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_arrow_back" />
 
     <TextView
         android:textSize="20sp"
         android:text="hello"
-        android:textColor="#000"
+        android:textColor="@color/colorWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtMessageNumber"/>
 
+    <TextView
+        android:id="@+id/txtCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signup_back"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:text="Send Message"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txtCreateAccount1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill the input below"
+        android:layout_marginStart="5dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@id/txtCreateAccount" />
+
     <EditText
-        android:layout_below="@+id/txtMessageNumber"
         android:id="@+id/etMessageCode"
         android:layout_width="match_parent"
-        android:layout_height="60dp"/>
-    <EditText
-        android:id="@+id/etMessageNumber"
-        android:layout_below="@+id/etMessageCode"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"/>
+        android:layout_height="55dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/et_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:hint="Donation Box Number"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_below="@id/txtCreateAccount1"/>
+
+
+
+
+
+
 
     <EditText
-        android:layout_marginTop="40dp"
-
-        android:layout_below="@+id/etMessageNumber"
+        android:id="@+id/etMessageData"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/etMessageData"/>
+        android:layout_marginTop="15dp"
+        android:layout_height="55dp"
+        android:drawableStart="@drawable/ic_person"
+        android:background="@drawable/et_bg"
+        android:hint="Amount donated"
+        android:layout_below="@id/etMessageCode"
+        android:inputType="text"
+        android:paddingStart="15dp"
+        android:drawablePadding="10dp"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"/>
+
+
 
     <Button
-        android:layout_below="@+id/etMessageData"
+        android:id="@+id/btnSend"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="SEND"
-        android:id="@+id/btnSend"/>
+        android:layout_height="55dp"
+        android:textSize="20sp"
+        android:text="Send Message"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/signuproundcorners"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_below="@id/etMessageData"/>
+
+
 
 </RelativeLayout>
+
+</ScrollView>

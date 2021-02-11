@@ -16,8 +16,7 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_about, container, false)
-        val intent = Intent(activity as Context, AdminActivity::class.java)
-        startActivity(intent)
+
         return view
 
     }
