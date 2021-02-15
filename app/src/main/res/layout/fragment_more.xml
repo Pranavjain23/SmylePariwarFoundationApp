@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/aboutUser"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:background="#FFEBEA">
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/moresecimg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgUser"
+        android:text="Username"/>
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtName"
+        android:text="Email"/>
 
     <Button
         android:id="@+id/btnAdminAccess"
@@ -16,63 +58,21 @@
 
 
 
-    <TextView
-        android:textColor="#000"
-        android:padding="5dp"
-        android:layout_marginTop="40dp"
-        android:id="@+id/txtName"
-        android:textSize="25sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text=""/>
+
+
+
+
+
+
 
 
 
     <RelativeLayout
-        android:id="@+id/rlShare"
-        android:layout_below="@+id/txtName"
-        android:layout_width="match_parent"
-
-        android:padding="15dp"
-        android:layout_height="190dp">
-        <TextView
-            android:id="@+id/shareHeading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Tell Family and Friends "
-            android:textAlignment="center"/>
-
-        <TextView
-            android:id="@+id/shareContent"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/shareHeading"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-
-            android:text="Share this app to the people you know and contibute to a great cause"
-            android:textSize="20sp"/>
-
-        <Button
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
-            android:padding="10dp"
-            android:id="@+id/txtShare"
-            android:textSize="25sp"
-            android:layout_below="@+id/shareContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Share"/>
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_marginTop="20dp"
+        android:id="@+id/userContribution"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@+id/rlShare"
+        android:layout_below="@+id/txtEmail"
 
         android:background="@drawable/shape1">
         <TextView
@@ -90,31 +90,33 @@
 
    <RelativeLayout
        android:layout_width="match_parent"
-       android:layout_height="200dp"
+       android:layout_height="wrap_content"
        android:padding="20dp"
        android:layout_alignParentBottom="true">
-       <TextView
+
+       <Button
+           android:id="@+id/txtShare"
            android:padding="10dp"
-           android:id="@+id/txtAccount"
            android:textSize="25sp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="Account"/>
+           android:text="Share"/>
 
        <TextView
-           android:id="@+id/txtHelp"
-           android:padding="10dp"
-           android:textSize="25sp"
-           android:layout_below="@+id/txtAccount"
+           android:id="@+id/shareContent"
            android:layout_width="match_parent"
+           android:layout_below="@+id/txtShare"
+           android:textAlignment="center"
            android:layout_height="wrap_content"
-           android:text="Help"/>
+           android:layout_marginBottom="7dp"
+           android:text="Share this app to the people you know and contibute to a great cause"
+           android:textSize="10sp"/>
 
-       <TextView
+       <Button
            android:id="@+id/txtSignOut"
            android:padding="10dp"
            android:textSize="25sp"
-           android:layout_below="@+id/txtHelp"
+           android:layout_below="@+id/shareContent"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text="Sign Out"/>

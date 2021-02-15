@@ -22,7 +22,7 @@
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:background="@drawable/heading_background">
+                android:background="@drawable/header_background_dark">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll"
                 android:text="Save The Children works to bring lasting changes in the lives of children. We reach out of the most disadvantaged help them survive, thrive ane learn and get a better future."
-                android:paddingStart="10dp"
+                android:paddingStart="15dp"
                 android:paddingEnd="0dp"
                 android:paddingBottom="10dp"
                 android:textColor="@color/black"
@@ -96,7 +96,7 @@
             </RelativeLayout>
 
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/descp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,18 +108,19 @@
                 android:textStyle="italic"
                 android:layout_marginTop="20dp"
                 android:textAlignment="center"
-                android:text="'' CREATE A CHILD CARING WORLD ''"/>
+                android:text="'' CREATE A CHILD CARING WORLD ''"/>-->
 
             <TextView
                 android:id="@+id/goalsOfNgo"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/descp"
+                android:layout_below="@id/rlNeedHelp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Goals of NGO"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:paddingStart="10dp"
+                android:layout_marginBottom="5dp"
                 android:textStyle="bold"/>
 
             <LinearLayout
@@ -143,26 +144,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:weightSum="6"
+                    android:background="@drawable/header_background_dark"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="4.5"
+                        android:layout_weight="5"
                         android:src="@drawable/smylelogo"/>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1.5">
+                        android:layout_weight="1">
 
                         <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Helping the needy children in education"
                             android:textAlignment="center"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
+                            android:textSize="15sp"
+                            android:textColor="@color/white"/>
 
                     </RelativeLayout>
 
@@ -184,26 +186,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:weightSum="6"
+                        android:background="@drawable/header_background_dark"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="4.5"
+                            android:layout_weight="5"
                             android:src="@drawable/smylelogo"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1.5">
+                            android:layout_weight="1">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Organizing the Annual Medical Camp"
                                 android:textAlignment="center"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"/>
+                                android:textSize="15sp"
+                                android:textColor="@color/white"/>
 
                         </RelativeLayout>
 
@@ -225,6 +228,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:weightSum="6"
+                        android:background="@drawable/header_background_dark"
                         android:orientation="vertical">
 
                         <ImageView
@@ -243,8 +247,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Water service for passers-by"
                                 android:textAlignment="center"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"/>
+                                android:textSize="15sp"
+                                android:textColor="@color/white"/>
 
                         </RelativeLayout>
 
@@ -266,6 +270,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:weightSum="6"
+                        android:background="@drawable/header_background_dark"
                         android:orientation="vertical">
 
                         <ImageView
@@ -284,8 +289,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Organizing Shyam Baba's Vigilance on Ekadashi"
                                 android:textAlignment="center"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"/>
+                                android:textSize="15sp"
+                                android:textColor="@color/white"/>
 
                         </RelativeLayout>
 
@@ -307,6 +312,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:weightSum="6"
+                        android:background="@drawable/header_background_dark"
                         android:orientation="vertical">
 
                         <ImageView
@@ -325,8 +331,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Annual Shyam Mahotsav"
                                 android:textAlignment="center"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"/>
+                                android:textSize="15sp"
+                                android:textColor="@color/white"/>
 
                         </RelativeLayout>
 
@@ -348,6 +354,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:weightSum="6"
+                        android:background="@drawable/header_background_dark"
                         android:orientation="vertical">
 
                         <ImageView
@@ -366,8 +373,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="Monthly Khatu Shyam ji Bus Tour"
                                 android:textAlignment="center"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"/>
+                                android:textSize="15sp"
+                                android:textColor="@color/white"/>
 
                         </RelativeLayout>
 
