@@ -54,12 +54,12 @@ class PostGoogleSignUp : AppCompatActivity() {
                     edtphonenumber2.setText("")
 
 
-                    val intent = Intent(
-                        this@PostGoogleSignUp,
-                        MainActivity::class.java
-                    )
-                    startActivity(intent)
-                    finish()
+//                    val intent = Intent(
+//                        this@PostGoogleSignUp,
+//                       MainActivity::class.java
+//                    )
+//                    startActivity(intent)
+
                 }else{
                     Toast.makeText(applicationContext,"saving to database failed ${it.result}", Toast.LENGTH_SHORT).show()
                     Log.d("ERROR","${it}")

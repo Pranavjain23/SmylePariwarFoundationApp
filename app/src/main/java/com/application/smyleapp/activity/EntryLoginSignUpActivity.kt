@@ -1,15 +1,13 @@
 package com.application.smyleapp.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.application.smyleapp.R
-import com.application.smyleapp.model.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -18,6 +16,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.*
+
 
 class EntryLoginSignUpActivity : AppCompatActivity() {
     lateinit var btnLogin : Button
@@ -127,11 +126,19 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+
+
                     // Sign in success, update UI with the signed-in user's information
                     val user = mAuth.currentUser
+                    var n_email = account.email
+                    var id = account.id
+
+                    var email = n_email?.replace(".com","")
+
+                    Toast.makeText(this@EntryLoginSignUpActivity, id.toString(), Toast.LENGTH_SHORT).show()
+
                     if (user != null) {
                         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
-
                     }
 
                     databaseReference.addValueEventListener(object : ValueEventListener {
@@ -139,52 +146,56 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
                             Toast.makeText(this@EntryLoginSignUpActivity, error.message, Toast.LENGTH_SHORT).show()
                         }
                         override fun onDataChange(dataSnapshot: DataSnapshot) {
-                            val currentUser = dataSnapshot.getValue(User::class.java)
-                            for (data in dataSnapshot.children) {
-                                if (user != null) {
 
-                                    Log.e("flag",account.id.toString())
-                                    Log.e("flag",user.uid)
 
-                                    if (data.child(account.id.toString()
-                                        ).exists()) {
+                            if (dataSnapshot.child(id.toString()).exists()) {
+                                val intent = Intent(this@EntryLoginSignUpActivity
+                                    ,
+                                    MainActivity::class.java
+                                )
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                    val intent = Intent(
+                                        this@EntryLoginSignUpActivity,
+                                        PostGoogleSignUp::class.java
+                                    )
+                                    intent.putExtra("account_email", account.email)
+                                    intent.putExtra("account_id", account.id)
 
-                                        val intent = Intent(
-                                            this@EntryLoginSignUpActivity,
-                                            MainActivity::class.java
-                                        )
-                                        startActivity(intent)
-                                        finish()
+                                    Toast.makeText(
+                                        this@EntryLoginSignUpActivity,
+                                        "Activity Started",
+                                        Toast.LENGTH_SHORT
+                                    ).show();
+                                    startActivity(intent)
+                                    finish()
 
-                                    } else {
-                                        Log.e("flag",account.id.toString())
-                                        Log.e("flag",user.uid)
 
-//                                        val intent = Intent(this@EntryLoginSignUpActivity, PostGoogleSignUp::class.java)
-//                                        startActivity(intent)
-
-                                    }
                                 }
-                            }
+
+
+
+
                         }
                     })
 
 
 
 
-//                    val intent = Intent(this@EntryLoginSignUpActivity, PostGoogleSignUp::class.java)
-//                    intent.putExtra("account_email",account.email)
-//                    intent.putExtra("account_id",account.id)
-//                    //val intent = Intent(this, StartSignUpActivity::class.java)
-//                    //intent.putExtra("flag","google");
-//                    Toast.makeText(this,"Activity Started",Toast.LENGTH_SHORT).show();
-//                    startActivity(intent)
+
+
+
+
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this,"Sorry authentication failed!",Toast.LENGTH_SHORT).show();
                 }
             }
     }
+
+
 
 
 
