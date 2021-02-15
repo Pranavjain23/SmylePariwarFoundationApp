@@ -6,6 +6,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.application.smyleapp.R
+import com.application.smyleapp.activity.MainActivity
 import com.application.smyleapp.adapter.NeedHelpAdapter
 import com.application.smyleapp.adapter.SliderAdapter_needHelp
 import com.application.smyleapp.model.NeedHelp
@@ -30,9 +32,12 @@ class HomeFragment : Fragment() {
 
     val needHelpList = arrayListOf<NeedHelp>()
 
-
-
-
+    lateinit var card1 : CardView
+    lateinit var card2 : CardView
+    lateinit var card3 : CardView
+    lateinit var card4 : CardView
+    lateinit var card5 : CardView
+    lateinit var card6 : CardView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +45,76 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        card1 = view.findViewById(R.id.card1)
+        card2 = view.findViewById(R.id.card2)
+        card3 = view.findViewById(R.id.card3)
+        card4 = view.findViewById(R.id.card4)
+        card5 = view.findViewById(R.id.card5)
+        card6 = view.findViewById(R.id.card6)
+
+        card1.setOnClickListener {
+            val fragment = Goal1Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+        card2.setOnClickListener {
+            val fragment = Goal2Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+        card3.setOnClickListener {
+            val fragment = Goal3Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+        card4.setOnClickListener {
+            val fragment = Goal4Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+        card5.setOnClickListener {
+            val fragment = Goal5Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+        card6.setOnClickListener {
+            val fragment = Goal6Fragment()
+            val args = Bundle()
+            fragment.arguments = args
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.frameLayout,
+                    fragment
+                ).commit()
+        }
+
+
         viewPager2 = view.findViewById(R.id.needHelpViewPager)
         needHelpList.add(NeedHelp(R.drawable.smylelogo,"hello"))
         needHelpList.add(NeedHelp(R.drawable.smylelogo,"Educate 100 girls"))
@@ -84,43 +159,5 @@ class HomeFragment : Fragment() {
         sliderHandler.postDelayed(sliderRunnable,3000)
     }
 
+}
 
-
-
-
-
-
-
-
-
-
-//        recyclerNeedHelp = view.findViewById(R.id.recyclerNeedHelp)
-//        needHelpDisplay()
-
-
-
-
-
-
-
-
-    }
-//    private fun needHelpDisplay(){
-//
-//        needHelpLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-//
-//        for (j in 0 until 5) {
-//
-//            val needHelpObject = NeedHelp(
-//                "https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"
-//            )
-//            needHelpList.add(needHelpObject)
-//
-//            needHelpAdapter = NeedHelpAdapter(activity as Context, needHelpList)
-//            recyclerNeedHelp.adapter = needHelpAdapter
-//            recyclerNeedHelp.layoutManager = needHelpLayoutManager
-//
-//
-//        }
-//
-//    }

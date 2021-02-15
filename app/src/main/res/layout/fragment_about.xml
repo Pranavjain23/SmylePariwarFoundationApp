@@ -35,7 +35,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
-                        android:text="ABOUT OUR APP"
+                        android:text="ABOUT US"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -44,7 +44,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Smyle Pariwar Foundation"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:paddingStart="10dp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
