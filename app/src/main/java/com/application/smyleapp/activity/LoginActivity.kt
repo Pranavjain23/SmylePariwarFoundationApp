@@ -1,8 +1,12 @@
 package com.application.smyleapp.activity
 
+import android.app.Activity
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Button
@@ -10,6 +14,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import com.application.smyleapp.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -34,25 +39,34 @@ class LoginActivity : AppCompatActivity() {
 
 
         signUp = findViewById(R.id.signUp)
-//        btnContinue.setOnClickListener {
-//            val intent = Intent(this@LoginActivity , MainActivity::class.java)
-//            startActivity(intent)
-//        }
 
-        //        firebaseUser = auth!!.currentUser!! //if he never logged out
 
         //check if user login then navigate to user screen
         auth = FirebaseAuth.getInstance()
         forgotPassword.setOnClickListener {
             val builder  =  AlertDialog.Builder(this)
             builder.setTitle("Forgot Password")
+            builder.setMessage("Reset password link will be sent to the given email")
+
 
             val view = layoutInflater.inflate(R.layout.dialog_forgot_password,null)
             val username = view.findViewById<EditText>(R.id.forgotPasswordUsername)
             builder.setView(view)
-            builder.setPositiveButton("Reset", { _, _ -> forgotPassword(username)})
-            builder.setNegativeButton("close", { _, _ ->})
+//            builder.setPositiveButton("Reset", { _, _ -> forgotPassword(username)})
+//            builder.setNegativeButton("close", { _, _ ->})
+
+                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                        dialog, id -> forgotPassword(username)
+                })
+                // negative button text and action
+                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
             builder.show()
+
+
+
+
 
 
         }

@@ -3,6 +3,7 @@ package com.application.smyleapp.activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -13,6 +14,7 @@ import com.application.smyleapp.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_admin.*
 import kotlinx.android.synthetic.main.activity_send_message.*
 
 
@@ -80,6 +82,8 @@ class AdminActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }else{
+                    progressLayout.visibility = View.GONE
+
 
                 }
 

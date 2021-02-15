@@ -41,9 +41,9 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         viewPager2 = view.findViewById(R.id.needHelpViewPager)
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Book pilgrimage trips"))
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Educate 100 girls"))
-        needHelpList.add(NeedHelp("https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg","Support old and poor"))
+        needHelpList.add(NeedHelp(R.drawable.smylelogo,"hello"))
+        needHelpList.add(NeedHelp(R.drawable.smylelogo,"Educate 100 girls"))
+        needHelpList.add(NeedHelp(R.drawable.smylelogo,"Support old and poor"))
 
         viewPager2.adapter = SliderAdapter_needHelp(needHelpList, viewPager2)
 
