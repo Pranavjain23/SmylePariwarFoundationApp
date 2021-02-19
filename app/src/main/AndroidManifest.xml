@@ -13,12 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.AdminActivity">
-
-        </activity>
-        <activity android:name=".activity.SendMessageActivity">
-
-        </activity>
+        <activity android:name=".activity.GalleryActivity"></activity>
+        <activity android:name=".activity.AdminActivity" />
+        <activity android:name=".activity.SendMessageActivity" />
         <activity android:name=".activity.PostGoogleSignUp" />
         <activity android:name=".activity.SendNotif" />
         <activity android:name=".activity.SliderActivity" />
@@ -32,9 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
-
-        </activity>
+        <activity android:name=".activity.MainActivity" />
 
         <service
             android:name=".sendNotification.MyFireBaseMessagingService"

@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.application.smyleapp.R
 import com.application.smyleapp.activity.AdminActivity
+import com.application.smyleapp.activity.EntryLoginSignUpActivity
 import com.application.smyleapp.activity.LoginActivity
 import com.application.smyleapp.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -28,6 +29,7 @@ class MoreFragment : Fragment() {
     lateinit var auth: FirebaseAuth
     lateinit var firebaseUser: FirebaseUser
     lateinit var databaseReference: DatabaseReference
+    lateinit var txtEmail : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +42,7 @@ class MoreFragment : Fragment() {
         txtShare = view.findViewById(R.id.txtShare)
         txtName = view.findViewById(R.id.txtName)
         btnAdminAccess = view.findViewById(R.id.btnAdminAccess)
+        txtEmail = view.findViewById(R.id.txtEmail)
 
         auth = FirebaseAuth.getInstance()
 
@@ -58,6 +61,8 @@ class MoreFragment : Fragment() {
                     val currentUser = snapshot.getValue(User::class.java)
                     if (currentUser != null) {
                         txtName.setText(currentUser.userName)
+                        txtEmail.setText(currentUser.userEmail)
+
 
                     }
 
@@ -73,7 +78,7 @@ class MoreFragment : Fragment() {
 
 
             activity?.finish()
-            val intent = Intent(context,LoginActivity::class.java)
+            val intent = Intent(context,EntryLoginSignUpActivity::class.java)
             startActivity(intent)
 
         }

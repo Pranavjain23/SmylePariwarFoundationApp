@@ -1,6 +1,8 @@
 package com.application.smyleapp.activity
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.application.smyleapp.R
@@ -9,7 +11,7 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import kotlinx.android.synthetic.main.activity_main.*
 
 val homeFragment = HomeFragment()
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -71,6 +73,22 @@ class MainActivity : AppCompatActivity() {
             else -> super.onBackPressed()
         }
     }
+
+//    override fun onClick(position: Int) {
+//        // handle click of image
+//
+//        Toast.makeText(this@MainActivity,"hello", Toast.LENGTH_LONG).show()
+//        val bundle = Bundle()
+////        bundle.putSerializable("images", imageList)
+//        bundle.putInt("position", position)
+//        val galleryFragment = GalleryFullscreenFragment()
+//        val fragmentTransaction = supportFragmentManager?.beginTransaction()
+//
+//        galleryFragment.setArguments(bundle)
+//        if (fragmentTransaction != null) {
+//            galleryFragment.show(fragmentTransaction, "gallery")
+//        }
+//    }
 
 
     }

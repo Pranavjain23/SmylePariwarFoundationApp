@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
         card6 = view.findViewById(R.id.card6)
 
         card1.setOnClickListener {
+
             val fragment = Goal1Fragment()
             val args = Bundle()
             fragment.arguments = args
@@ -158,6 +159,8 @@ class HomeFragment : Fragment() {
         super.onResume()
         sliderHandler.postDelayed(sliderRunnable,3000)
     }
+
+
 
 }
 
