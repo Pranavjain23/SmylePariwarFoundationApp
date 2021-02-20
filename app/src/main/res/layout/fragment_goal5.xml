@@ -43,7 +43,10 @@
             android:layout_below="@id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta, est sit amet ornare malesuada, enim tellus vulputate dui, id vestibulum est massa in eros. Vestibulum convallis purus vitae est convallis ullamcorper vel ac tellus. Sed condimentum euismod tempus. Suspendisse condimentum ligula sit amet elit imperdiet, ac mollis arcu lobortis. Quisque vehicula felis eu consequat blandit. Nulla rutrum est quis sapien ornare elementum. Curabitur sagittis leo non libero cursus lobortis. Sed neque velit, malesuada venenatis eros eu, viverra molestie eros. Sed porttitor leo dolor, at laoreet risus mollis finibus. Nulla ac tristique velit, vitae venenatis nibh. Curabitur ut aliquam mi, et eleifend augue."
+                    android:text="Once in a year, we organize a Shyam Mahotsav which is a celebration of our community and it also is our flagship fundraising event, The funds we raise through the event help us in sustaining our operations for the next year."
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>

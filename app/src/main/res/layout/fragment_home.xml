@@ -52,7 +52,7 @@
                 android:paddingEnd="0dp"
                 android:paddingBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:layout_marginEnd="70dp"/>
 
             <RelativeLayout
@@ -67,7 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="We need your Help"
-                    android:textSize="25sp"
+                    android:textSize="23sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"/>
@@ -88,7 +88,7 @@
                     android:id="@+id/needHelpViewPager"
                     android:layout_width="match_parent"
                     android:layout_below="@id/txtHelp"
-                    android:layout_height="230dp"
+                    android:layout_height="250dp"
                     android:paddingStart="60dp"
                     android:paddingEnd="60dp"
                     />

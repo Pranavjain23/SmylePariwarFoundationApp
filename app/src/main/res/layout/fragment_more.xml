@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgUser"
+        android:layout_below="@+id/imgUser"
         android:text="Username"/>
 
     <TextView

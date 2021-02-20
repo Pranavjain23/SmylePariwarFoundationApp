@@ -12,8 +12,10 @@
 
     <ImageView
         android:id="@+id/imgGoal"
+        android:cropToPadding="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:src="@drawable/smylelogo"/>
 
 </androidx.cardview.widget.CardView>

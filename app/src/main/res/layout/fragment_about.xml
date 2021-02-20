@@ -7,10 +7,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorWhite">
 
         <RelativeLayout
+            android:id="@+id/aboutUs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -100,7 +101,38 @@
                 android:textColor="@color/black"
                 android:layout_below="@id/Aboutapp"/>-->
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/Aboutapp"
+                android:weightSum="2">
+
+
+                <TextView
+                    android:id="@+id/read"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:drawableTop="@drawable/facebook"
+                    android:text="LIKE THE PAGE"/>
+
+                <TextView
+                    android:id="@+id/watch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:drawableTop="@drawable/youtube"
+                    android:text="WATCH THE EFFORTS"/>
+
+
+            </LinearLayout>
+
         </RelativeLayout>
+
+
 
     </RelativeLayout>
 

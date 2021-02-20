@@ -43,7 +43,10 @@
             android:layout_below="@id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp">
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta, est sit amet ornare malesuada, enim tellus vulputate dui, id vestibulum est massa in eros. Vestibulum convallis purus vitae est convallis ullamcorper vel ac tellus. Sed condimentum euismod tempus. Suspendisse condimentum ligula sit amet elit imperdiet, ac mollis arcu lobortis. Quisque vehicula felis eu consequat blandit. Nulla rutrum est quis sapien ornare elementum. Curabitur sagittis leo non libero cursus lobortis. Sed neque velit, malesuada venenatis eros eu, viverra molestie eros. Sed porttitor leo dolor, at laoreet risus mollis finibus. Nulla ac tristique velit, vitae venenatis nibh. Curabitur ut aliquam mi, et eleifend augue."
+                    android:text="Delhi is a warm city, specially during summers, the temperature soars to 45 degree Celsius and above, during one such day we observed that many people, mainly labourer’s like rikshaw pullers they look for water taps but there are not many to be found, so we decided to put up various tents around our office where our volunteers serve water to people, it is a month long process which runs during the month of May or June."
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>

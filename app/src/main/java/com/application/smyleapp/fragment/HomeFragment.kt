@@ -6,6 +6,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.application.smyleapp.R
 import com.application.smyleapp.activity.MainActivity
+import com.application.smyleapp.activity.PaymentActivity
 import com.application.smyleapp.adapter.NeedHelpAdapter
 import com.application.smyleapp.adapter.SliderAdapter_needHelp
 import com.application.smyleapp.model.NeedHelp
@@ -117,9 +119,9 @@ class HomeFragment : Fragment() {
 
 
         viewPager2 = view.findViewById(R.id.needHelpViewPager)
-        needHelpList.add(NeedHelp(R.drawable.smylelogo,"hello"))
-        needHelpList.add(NeedHelp(R.drawable.smylelogo,"Educate 100 girls"))
-        needHelpList.add(NeedHelp(R.drawable.smylelogo,"Support old and poor"))
+        needHelpList.add(NeedHelp(R.drawable.trip,"Book Pilgrimage trip"))
+        needHelpList.add(NeedHelp(R.drawable.teachgirl,"Educate 100 girls"))
+        needHelpList.add(NeedHelp(R.drawable.donatebg,"Support old and poor"))
 
         viewPager2.adapter = SliderAdapter_needHelp(needHelpList, viewPager2)
 

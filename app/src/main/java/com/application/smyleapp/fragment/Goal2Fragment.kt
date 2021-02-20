@@ -30,9 +30,13 @@ class Goal2Fragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_goal2, container, false)
 
         viewPager2 = view.findViewById(R.id.goal1ViewPager)
-        GoalsList.add(GoalGallery(R.drawable.smylelogo))
-        GoalsList.add(GoalGallery(R.drawable.smylelogo))
-        GoalsList.add(GoalGallery(R.drawable.smylelogo))
+        GoalsList.add(GoalGallery(R.drawable.mc1))
+        GoalsList.add(GoalGallery(R.drawable.mc2))
+        GoalsList.add(GoalGallery(R.drawable.mc3))
+        GoalsList.add(GoalGallery(R.drawable.mc4))
+        GoalsList.add(GoalGallery(R.drawable.mc5))
+        GoalsList.add(GoalGallery(R.drawable.mc6))
+        GoalsList.add(GoalGallery(R.drawable.mc7))
 
         viewPager2.adapter = SliderAdapter_GoalsGallery(GoalsList, viewPager2)
 
