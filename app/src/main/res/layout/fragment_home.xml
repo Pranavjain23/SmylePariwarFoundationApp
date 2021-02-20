@@ -84,7 +84,7 @@
 <!--                    android:orientation="horizontal"/>-->
 
                 <androidx.viewpager2.widget.ViewPager2
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:id="@+id/needHelpViewPager"
                     android:layout_width="match_parent"
                     android:layout_below="@id/txtHelp"

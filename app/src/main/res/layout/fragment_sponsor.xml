@@ -21,7 +21,7 @@
             android:padding="4dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="220dp"
             android:weightSum="6"
             android:orientation="horizontal">
 
@@ -32,10 +32,14 @@
                 android:layout_weight="2"
                 android:src="@drawable/teachgirl"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_weight="4">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:weightSum="6"
                 android:orientation="vertical">
 
@@ -55,6 +59,8 @@
 
 
             </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -105,21 +111,25 @@
                 android:padding="4dp">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="220dp"
                     android:weightSum="6"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitCenter"
                         android:layout_weight="2"
                         android:src="@drawable/donatebg"/>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="4"
+                        android:layout_weight="4">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
                         android:weightSum="6"
                         android:orientation="vertical">
 
@@ -139,6 +149,7 @@
 
 
                     </LinearLayout>
+                </RelativeLayout>
 
                 </LinearLayout>
 
