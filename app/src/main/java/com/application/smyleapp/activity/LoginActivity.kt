@@ -9,10 +9,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
 import android.util.Patterns
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.application.smyleapp.R
@@ -26,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var btnContinue : Button
     lateinit var signUp : TextView
     lateinit var forgotPassword : TextView
+    lateinit var close : ImageView
 //    lateinit var forgotPasswordUsername : EditText
     private var auth: FirebaseAuth? = null
 
@@ -35,10 +33,20 @@ class LoginActivity : AppCompatActivity() {
 
         btnContinue = findViewById(R.id.btnContinue)
         forgotPassword = findViewById(R.id.forgotPassword)
+        close = findViewById(R.id.close)
 
 
 
         signUp = findViewById(R.id.signUp)
+
+        close.setOnClickListener {
+            val intent = Intent(
+                this@LoginActivity,
+                EntryLoginSignUpActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
 
 
         //check if user login then navigate to user screen

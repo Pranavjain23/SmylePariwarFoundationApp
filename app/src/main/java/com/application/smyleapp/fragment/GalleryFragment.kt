@@ -76,18 +76,25 @@ class GalleryFragment : Fragment() , GalleryImageClickListener  {
 
     private fun loadImages() {
 
-        imageList.add(Image("https://i.ibb.co/wBYDxLq/beach.jpg"))
-        imageList.add(Image("https://i.ibb.co/gM5NNJX/butterfly.jpg"))
-        imageList.add(Image("https://i.ibb.co/10fFGkZ/car-race.jpg"))
-        imageList.add(Image("https://i.ibb.co/ygqHsHV/coffee-milk.jpg"))
-        imageList.add(Image("https://i.ibb.co/7XqwsLw/fox.jpg"))
-        imageList.add(Image("https://i.ibb.co/L1m1NxP/girl.jpg"))
-        imageList.add(Image("https://i.ibb.co/wc9rSgw/desserts.jpg"))
-        imageList.add(Image("https://i.ibb.co/wdrdpKC/kitten.jpg"))
-        imageList.add(Image("https://i.ibb.co/dBCHzXQ/paris.jpg"))
-        imageList.add(Image("https://i.ibb.co/JKB0KPk/pizza.jpg"))
-        imageList.add(Image("https://i.ibb.co/VYYPZGk/salmon.jpg"))
-        imageList.add(Image("https://i.ibb.co/JvWpzYC/sunset.jpg"))
+        imageList.add(Image(R.drawable.as1))
+        imageList.add(Image(R.drawable.as2))
+        imageList.add(Image(R.drawable.as3))
+        imageList.add(Image(R.drawable.as4))
+        imageList.add(Image(R.drawable.as5))
+        imageList.add(Image(R.drawable.as6))
+        imageList.add(Image(R.drawable.mc1))
+        imageList.add(Image(R.drawable.mc2))
+        imageList.add(Image(R.drawable.mc3))
+        imageList.add(Image(R.drawable.mc4))
+        imageList.add(Image(R.drawable.mc5))
+        imageList.add(Image(R.drawable.mc6))
+        imageList.add(Image(R.drawable.mc7))
+        imageList.add(Image(R.drawable.pc1))
+        imageList.add(Image(R.drawable.pc2))
+        imageList.add(Image(R.drawable.pc3))
+        imageList.add(Image(R.drawable.pc4))
+        imageList.add(Image(R.drawable.pc5))
+
 
 
     }

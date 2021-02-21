@@ -1,5 +1,6 @@
 package com.application.smyleapp.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -123,7 +124,7 @@ class HomeFragment : Fragment() {
         needHelpList.add(NeedHelp(R.drawable.teachgirl,"Educate 100 girls"))
         needHelpList.add(NeedHelp(R.drawable.donatebg,"Support old and poor"))
 
-        viewPager2.adapter = SliderAdapter_needHelp(needHelpList, viewPager2)
+        viewPager2.adapter = SliderAdapter_needHelp(activity as Context,needHelpList, viewPager2)
 
         viewPager2.clipToPadding = false
         viewPager2.clipChildren = false

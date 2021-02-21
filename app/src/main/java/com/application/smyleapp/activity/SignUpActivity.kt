@@ -1,19 +1,21 @@
 package com.application.smyleapp.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.application.smyleapp.R
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -21,15 +23,23 @@ class SignUpActivity : AppCompatActivity() {
 
     lateinit var btnSignUp : Button
     lateinit var databaseReference: DatabaseReference
+    lateinit var signup_back : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
         auth = FirebaseAuth.getInstance()
         btnSignUp = findViewById(R.id.btnSignUp)
+        signup_back = findViewById(R.id.signup_back)
 
-
-
+            signup_back.setOnClickListener {
+            val intent = Intent(
+                this@SignUpActivity,
+                EntryLoginSignUpActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
         btnSignUp.setOnClickListener {
             val userName = edtname.text.toString()
 
@@ -59,7 +69,14 @@ class SignUpActivity : AppCompatActivity() {
             if (!password.equals(confirmPassword)){
                 Toast.makeText(applicationContext,"passwords do not match", Toast.LENGTH_SHORT).show()
             }
-            registerUser(userName,email,password,phoneNumber)
+            if(password.equals(confirmPassword) && isValidPassword(password)){
+                registerUser(userName,email,password,phoneNumber)
+            }else{
+                Toast.makeText(applicationContext,"Please enter a valid password", Toast.LENGTH_SHORT).show()
+
+            }
+
+
 
         }
 
@@ -122,5 +139,15 @@ class SignUpActivity : AppCompatActivity() {
 
                 }
             }
+
+    }
+    fun isValidPassword(password: String?): Boolean {
+        val pattern: Pattern
+        val matcher: Matcher
+        val PASSWORD_PATTERN =
+            "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$"
+        pattern = Pattern.compile(PASSWORD_PATTERN)
+        matcher = pattern.matcher(password)
+        return matcher.matches()
     }
 }
