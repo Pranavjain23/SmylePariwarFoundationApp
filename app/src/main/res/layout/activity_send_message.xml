@@ -54,7 +54,7 @@ android:background="#090520">
     android:layout_marginRight="10dp">
 
     <ImageView
-        android:id="@+id/signup_back"
+        android:id="@+id/admin_back"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
@@ -66,13 +66,14 @@ android:background="#090520">
         android:textColor="@color/colorWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:id="@+id/txtMessageNumber"/>
 
     <TextView
         android:id="@+id/txtCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signup_back"
+        android:layout_below="@id/admin_back"
         android:layout_marginStart="5dp"
         android:layout_marginTop="30dp"
         android:text="Send Message"
@@ -86,10 +87,10 @@ android:background="#090520">
         android:id="@+id/txtCreateAccount1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please fill the input below"
+        android:text="Enter the Box Number and Amount"
         android:layout_marginStart="5dp"
         android:textAllCaps="false"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textColor="@color/colorWhite"
         android:layout_below="@id/txtCreateAccount" />
 

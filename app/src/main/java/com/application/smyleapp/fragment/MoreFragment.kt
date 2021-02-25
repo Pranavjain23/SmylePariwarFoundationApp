@@ -95,13 +95,11 @@ class MoreFragment : Fragment() {
     }
 
     private fun shareApp(){
-        val myIntent = Intent(Intent.ACTION_SEND)
-        myIntent.type = "type/plain"
-        val shareBody = ""
-        val shareSub = ""
-        myIntent.putExtra(Intent.EXTRA_SUBJECT,shareBody)
-        myIntent.putExtra(Intent.EXTRA_TEXT,shareSub)
-        startActivity(Intent.createChooser(myIntent,"Share app"))
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        shareIntent.type = "text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out Smyle Pariwar at: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+        startActivity(shareIntent)
 
     }
 

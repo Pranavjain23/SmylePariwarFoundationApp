@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <RelativeLayout
@@ -56,36 +57,63 @@
         android:layout_alignParentRight="true"
         android:layout_margin="10dp"/>
 
-
-
-
-
-
-
-
-
-
-
-
-    <RelativeLayout
-        android:id="@+id/userContribution"
-        android:layout_marginTop="5dp"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/txtEmail"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@id/txtEmail">
 
-        android:background="@drawable/shape1">
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Your Contibution"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="#FFEBEA">
+    <TextView
+        android:id="@+id/txtSmyleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smyle Pariwar Foundation"
+        android:textAlignment="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
 
 
+    <Button
+        android:id="@+id/btnOurContribution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSmyleName"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:textSize="17sp"
+        android:background="@drawable/shape1"
+        android:text="Our Contribution"/>
+
+    <TextView
+        android:id="@+id/txtQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No amount is too small. Every penny received can help us change a life!"
+        android:textAlignment="center"
+        android:layout_below="@id/btnOurContribution"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 
    <RelativeLayout

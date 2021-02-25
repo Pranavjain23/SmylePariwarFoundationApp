@@ -11,12 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/smylelogo"/>
 
+        <TextView
+            android:id="@+id/txtAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgLogo"
+            android:text="ADMIN MODE"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_below="@id/txtAdmin"
             android:id="@+id/adminName"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/et_bg"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="10dp"
@@ -24,8 +42,8 @@
             android:inputType="textPersonName"
             android:paddingLeft="15dp"
             android:singleLine="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             />
 
         <EditText
@@ -40,8 +58,8 @@
 
             android:paddingLeft="15dp"
             android:singleLine="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             android:layout_below="@+id/adminName"
             />
 
@@ -58,8 +76,8 @@
             android:layout_below="@+id/adminNumber"
             android:paddingLeft="15dp"
             android:singleLine="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             />
 
         <Button
@@ -69,20 +87,26 @@
             android:textSize="20sp"
             android:text="Sign up"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="40dp"
             android:background="@drawable/signuproundcorners"
             android:textColor="@color/colorWhite"
             android:textAllCaps="false"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             android:layout_below="@+id/adminKey"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin mode is only for the employees associated with the Smyle Pariwar Foundation and is accessible only by the access key provided to them"
+            android:textAlignment="center"
+            android:layout_below="@id/adminEnter"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="11sp"
+            />
+
     </RelativeLayout>
-
-
-
-
-
-
-
 
 
     <RelativeLayout
@@ -97,7 +121,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
-
 
 
 </RelativeLayout>
