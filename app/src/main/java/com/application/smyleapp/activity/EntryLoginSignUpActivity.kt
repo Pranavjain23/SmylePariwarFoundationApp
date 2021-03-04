@@ -103,7 +103,7 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
 //            if (task.isSuccessful) {
             try {
                 // Google Sign In was successful, authenticate with Firebase
-                Toast.makeText(this,"Google Sign In Successful", Toast.LENGTH_SHORT).show();
+
                 val account = task.getResult(ApiException::class.java)!!
 
                 Log.e("UserName",">>"+account.idToken!!)
@@ -135,7 +135,7 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
 
                     var email = n_email?.replace(".com","")
 
-                    Toast.makeText(this@EntryLoginSignUpActivity, id.toString(), Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@EntryLoginSignUpActivity, id.toString(), Toast.LENGTH_SHORT).show()
 
                     if (user != null) {
                         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
@@ -163,11 +163,7 @@ class EntryLoginSignUpActivity : AppCompatActivity() {
                                     intent.putExtra("account_email", account.email)
                                     intent.putExtra("account_id", account.id)
 
-                                    Toast.makeText(
-                                        this@EntryLoginSignUpActivity,
-                                        "Activity Started",
-                                        Toast.LENGTH_SHORT
-                                    ).show();
+
                                     startActivity(intent)
                                     finish()
 

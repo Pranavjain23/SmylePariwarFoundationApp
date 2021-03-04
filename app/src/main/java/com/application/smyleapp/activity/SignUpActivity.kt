@@ -72,7 +72,7 @@ class SignUpActivity : AppCompatActivity() {
             if(password.equals(confirmPassword) && isValidPassword(password)){
                 registerUser(userName,email,password,phoneNumber)
             }else{
-                Toast.makeText(applicationContext,"Please enter a valid password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Please should have minimum 8 characters and a special character", Toast.LENGTH_SHORT).show()
 
             }
 

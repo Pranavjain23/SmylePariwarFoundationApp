@@ -3,8 +3,10 @@ package com.application.smyleapp.activity
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.application.smyleapp.R
@@ -16,16 +18,19 @@ import kotlinx.android.synthetic.main.activity_send_message.*
 
 class SendMessageActivity : AppCompatActivity() {
     lateinit var etMessageNumber : EditText
+    lateinit var hello : String
     lateinit var etMessageData : EditText
     lateinit var btnSend : Button
     lateinit var etMessageCode : EditText
     lateinit var auth: FirebaseAuth
+    lateinit var messageBack : ImageView
     lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_message)
         etMessageData = findViewById(R.id.etMessageData)
         etMessageCode = findViewById(R.id.etMessageCode)
+        messageBack = findViewById(R.id.message_back)
 
         btnSend = findViewById(R.id.btnSend)
         auth = FirebaseAuth.getInstance()
@@ -43,10 +48,12 @@ class SendMessageActivity : AppCompatActivity() {
 //            var sms = SmsManager.getDefault()
 //            val message : String = "Jai shree Shyam Mr. Dash,SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
 //
-//            sms.sendTextMessage(etMessageNumber.text.toString(),"ME",message,null,null)
+//            sms.sendTextMessage("9990908555","ME",message,null,null)
+//            sms.sendTextMessage(,"ME",message,null,null)
+//
 //        }
         btnSend.setOnClickListener {
-            Toast.makeText(this@SendMessageActivity,etMessageCode.text.toString(), Toast.LENGTH_SHORT).show()
+
 
             databaseReference = FirebaseDatabase.getInstance().getReference("Contributors").child(etMessageCode.text.toString())
 
@@ -57,9 +64,16 @@ class SendMessageActivity : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val contributor = dataSnapshot.getValue(Contributor::class.java)
                     if (contributor != null) {
-                        txtMessageNumber.text = contributor.CONTACTNO.toString()
+
+                        var sms = SmsManager.getDefault()
+                        hello = contributor.CONTACTNO.toString()
+                        val message : String = "Jai shree Shyam Mr. Dash,SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
+
+                        sms.sendTextMessage("9990908555","ME",message,null,null)
+                        sms.sendTextMessage(hello,"ME",message,null,null)
+
                     }else{
-                        Toast.makeText(this@SendMessageActivity, "its null", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SendMessageActivity, "Box number doesn't exist in the database", Toast.LENGTH_SHORT).show()
 
                     }
 
@@ -68,6 +82,11 @@ class SendMessageActivity : AppCompatActivity() {
                 }
             })
 
+
+        }
+
+        messageBack.setOnClickListener {
+            onBackPressed()
         }
 
     }

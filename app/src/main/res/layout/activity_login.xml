@@ -67,7 +67,7 @@
                android:drawablePadding="10dp"
                android:drawableStart="@drawable/ic_person"
                android:inputType="textEmailAddress"
-               android:textColor="@color/colorWhite"
+               android:textColor="@color/black"
                android:layout_height="55dp"
                android:layout_marginEnd="5dp"
                android:layout_marginStart="5dp"/>
@@ -82,7 +82,7 @@
                android:layout_below="@id/mail_et"
                android:drawablePadding="10dp"
                android:drawableLeft="@drawable/ic_lock"
-               android:textColor="@color/colorWhite"
+               android:textColor="@color/black"
                android:inputType="textPassword"
                android:layout_height="55dp"
                android:layout_marginEnd="5dp"

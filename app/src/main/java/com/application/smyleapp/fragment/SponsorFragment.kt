@@ -27,19 +27,19 @@ class SponsorFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_sponsor, container, false)
 
         btnDonateSponsor = view.findViewById(R.id.btnDonateSponsor)
-        btnDonateSponsor1 = view.findViewById(R.id.btnDonateSponsor1)
+
         btnContactNumber = view.findViewById(R.id.btnContactNumber)
-        btnContactNumber1 = view.findViewById(R.id.btnContactNumber1)
+
 
         btnDonateSponsor.setOnClickListener {
             val intent = Intent(context, PaymentActivity::class.java)
             startActivity(intent)
         }
 
-        btnDonateSponsor1 .setOnClickListener {
-            val intent = Intent(context, PaymentActivity::class.java)
-            startActivity(intent)
-        }
+//        btnDonateSponsor1 .setOnClickListener {
+//            val intent = Intent(context, PaymentActivity::class.java)
+//            startActivity(intent)
+//        }
 
         btnContactNumber.setOnClickListener {
             val u : Uri = Uri.parse("tel: "+9910191122)
@@ -54,18 +54,18 @@ class SponsorFragment : Fragment() {
             }
         }
 
-        btnContactNumber1.setOnClickListener {
-            val u : Uri = Uri.parse("tel: "+9910191122)
-            val intent = Intent(Intent.ACTION_DIAL,u)
-            try
-            {
-                startActivity(intent);
-            }
-            catch ( s:SecurityException)
-            {
-                Toast.makeText(context, "Can not copy to dialer", Toast.LENGTH_LONG).show()
-            }
-        }
+//        btnContactNumber1.setOnClickListener {
+//            val u : Uri = Uri.parse("tel: "+9910191122)
+//            val intent = Intent(Intent.ACTION_DIAL,u)
+//            try
+//            {
+//                startActivity(intent);
+//            }
+//            catch ( s:SecurityException)
+//            {
+//                Toast.makeText(context, "Can not copy to dialer", Toast.LENGTH_LONG).show()
+//            }
+//        }
 
 
         return view

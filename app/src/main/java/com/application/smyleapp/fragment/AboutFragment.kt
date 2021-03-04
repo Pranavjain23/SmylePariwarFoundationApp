@@ -36,7 +36,7 @@ class AboutFragment : Fragment() {
             val intent = Intent()
             intent.action = Intent.ACTION_VIEW
             val uri =
-                Uri.parse("") //https://www.youtube.com/channel/$key
+                Uri.parse("https://www.youtube.com/channel/UCCjAYRuosoIm6huzZiAcEaQ") //https://www.youtube.com/channel/$key
             intent.data = uri
             startActivity(intent)
         })
