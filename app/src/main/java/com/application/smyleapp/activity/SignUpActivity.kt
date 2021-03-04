@@ -69,7 +69,7 @@ class SignUpActivity : AppCompatActivity() {
             if (!password.equals(confirmPassword)){
                 Toast.makeText(applicationContext,"passwords do not match", Toast.LENGTH_SHORT).show()
             }
-            if(password.equals(confirmPassword) && isValidPassword(password)){
+            if(password.equals(confirmPassword) && isValidPassword(password) && !TextUtils.isEmpty(userName)&& !TextUtils.isEmpty(email)&& !TextUtils.isEmpty(phoneNumber)){
                 registerUser(userName,email,password,phoneNumber)
             }else{
                 Toast.makeText(applicationContext,"Please should have minimum 8 characters and a special character", Toast.LENGTH_SHORT).show()
