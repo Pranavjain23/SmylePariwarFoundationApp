@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.EntryLoginSignUpActivity"
     android:fillViewport="true"
-    android:background="#090520">
+    android:background="@drawable/heading_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/signuproundcorners"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:layout_below="@id/logoLogin"/>
 

@@ -45,7 +45,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".activity.SignUpActivity"
 android:fillViewport="true"
-android:background="#090520">
+android:background="@drawable/heading_background">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -100,7 +100,7 @@ android:background="#090520">
         android:layout_height="55dp"
         android:layout_marginTop="35dp"
         android:background="@drawable/et_bg"
-        android:drawableLeft="@drawable/ic_person"
+        android:drawableLeft="@drawable/ic_box"
         android:drawablePadding="10dp"
         android:hint="Donation Box Number"
         android:inputType="textPersonName"
@@ -121,7 +121,7 @@ android:background="#090520">
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
         android:layout_height="55dp"
-        android:drawableStart="@drawable/ic_person"
+        android:drawableStart="@drawable/ic_money"
         android:background="@drawable/et_bg"
         android:hint="Amount donated"
         android:layout_below="@id/etMessageCode"

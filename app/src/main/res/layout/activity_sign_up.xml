@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.SignUpActivity"
     android:fillViewport="true"
-    android:background="#090520">
+    android:background="@drawable/heading_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
             android:layout_height="55dp"
-            android:drawableStart="@drawable/ic_person"
+            android:drawableStart="@drawable/ic_phone"
             android:background="@drawable/et_bg"
             android:hint="Phone Number"
             android:layout_below="@id/edtemail"

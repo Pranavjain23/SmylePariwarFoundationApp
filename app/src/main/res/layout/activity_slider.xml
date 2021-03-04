@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="JOIN US NOW >>"
-        android:background="#090520"
+        android:background="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textColor="@color/white"
         android:padding="20dp"/>

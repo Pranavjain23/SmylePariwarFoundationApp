@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
+    android:background="@drawable/heading_background"
     tools:context=".activity.AdminActivity">
 
     <RelativeLayout
@@ -27,6 +28,7 @@
             android:text="ADMIN MODE"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
         <EditText
@@ -52,7 +54,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:background="@drawable/et_bg"
-            android:drawableLeft="@drawable/ic_person"
+            android:drawableLeft="@drawable/ic_phone"
             android:drawablePadding="10dp"
             android:hint="Phone Number"
 
@@ -69,10 +71,9 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:background="@drawable/et_bg"
-            android:drawableLeft="@drawable/ic_person"
+            android:drawableLeft="@drawable/ic_lock"
             android:drawablePadding="10dp"
             android:hint="Access Key"
-
             android:layout_below="@+id/adminNumber"
             android:paddingLeft="15dp"
             android:singleLine="true"
@@ -103,6 +104,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
+            android:textColor="@color/white"
             android:textSize="11sp"
             />
 
