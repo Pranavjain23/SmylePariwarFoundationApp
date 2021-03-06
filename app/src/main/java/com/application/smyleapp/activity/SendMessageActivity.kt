@@ -72,6 +72,7 @@ class SendMessageActivity : AppCompatActivity() {
                         val message : String = "Jai shree Shyam Mr.$contributor_name, SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
 
                         sms.sendTextMessage("9990908555","ME",message,null,null)
+                        sms.sendTextMessage("9873298884","ME",message,null,null)
                         sms.sendTextMessage(hello,"ME",message,null,null)
                         Toast.makeText(this@SendMessageActivity, "MESSAGE SENT", Toast.LENGTH_SHORT).show()
 

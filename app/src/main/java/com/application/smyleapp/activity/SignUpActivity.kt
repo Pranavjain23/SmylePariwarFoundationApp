@@ -135,7 +135,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
 
                 else{
-                    Toast.makeText(applicationContext,"signup failed $it", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Email already exists", Toast.LENGTH_SHORT).show()
 
                 }
             }

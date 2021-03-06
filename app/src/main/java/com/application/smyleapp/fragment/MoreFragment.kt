@@ -2,6 +2,7 @@ package com.application.smyleapp.fragment
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ class MoreFragment : Fragment() {
     lateinit var firebaseUser: FirebaseUser
     lateinit var databaseReference: DatabaseReference
     lateinit var txtEmail : TextView
+    lateinit var btnOurContribution : Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +45,7 @@ class MoreFragment : Fragment() {
         txtName = view.findViewById(R.id.txtName)
         btnAdminAccess = view.findViewById(R.id.btnAdminAccess)
         txtEmail = view.findViewById(R.id.txtEmail)
+        btnOurContribution = view.findViewById(R.id.btnOurContribution)
 
         auth = FirebaseAuth.getInstance()
 
@@ -80,6 +83,12 @@ class MoreFragment : Fragment() {
             activity?.finish()
             val intent = Intent(context,EntryLoginSignUpActivity::class.java)
             startActivity(intent)
+
+        }
+        btnOurContribution.setOnClickListener {
+            val openURL = Intent(android.content.Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://www.smylepariwarfoundation.org/")
+            startActivity(openURL)
 
         }
 
