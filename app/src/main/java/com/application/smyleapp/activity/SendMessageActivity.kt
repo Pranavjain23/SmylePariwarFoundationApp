@@ -69,11 +69,12 @@ class SendMessageActivity : AppCompatActivity() {
                         var sms = SmsManager.getDefault()
                         contributor_name = contributor.NAME.toString()
                         hello = contributor.CONTACTNO.toString()
-                        val message : String = "Jai shree Shyam Mr.$contributor_name, SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
+                        val message : String = "Jai Shree Shyam Shri/Smt $contributor_name, SMYLE PARIWAR foundation ko Rs.${etMessageData.text} ka sahyog dene ke liye dhanyavaad"
 
                         sms.sendTextMessage("9990908555","ME",message,null,null)
-                        sms.sendTextMessage("9873298884","ME",message,null,null)
+                        sms.sendTextMessage("9667161122","ME",message,null,null)
                         sms.sendTextMessage(hello,"ME",message,null,null)
+
                         Toast.makeText(this@SendMessageActivity, "MESSAGE SENT", Toast.LENGTH_SHORT).show()
 
                     }else{

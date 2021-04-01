@@ -53,8 +53,9 @@ class AdminActivity : AppCompatActivity() {
 
                     val currentUser = snapshot.getValue(User::class.java)
                     if (currentUser != null) {
-                        Log.e("hello",currentUser.phoneNumber+"is hello")
+
                         phone_number = currentUser.phoneNumber
+                        Log.e("hey",phone_number);
 
 
                     }
@@ -68,6 +69,7 @@ class AdminActivity : AppCompatActivity() {
 
 
 
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Admins")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -75,6 +77,7 @@ class AdminActivity : AppCompatActivity() {
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.child(phone_number).exists()) {
+                    Log.e("hey","true");
                     val intent = Intent(
                         this@AdminActivity,
                         SendMessageActivity::class.java
@@ -82,7 +85,10 @@ class AdminActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }else{
+
+
                     progressLayout.visibility = View.GONE
+
 
 
                 }
@@ -122,9 +128,9 @@ class AdminActivity : AppCompatActivity() {
 
 
                     //open home activity
-                    adminName.setText("")
-                    adminNumber.setText("")
-                    adminKey.setText("")
+//                    adminName.setText("")
+//                    adminNumber.setText("")
+//                    adminKey.setText("")
 
 
                     val intent = Intent(
